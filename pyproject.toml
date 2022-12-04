@@ -13,6 +13,10 @@ python = "^3.11"
 gendiff = "gendiff.scripts.gen_diff:main"
 
 
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+pytest = "^7.2.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
