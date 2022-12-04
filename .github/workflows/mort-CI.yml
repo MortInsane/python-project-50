@@ -25,3 +25,11 @@ jobs:
       - name: Run linter and pytest
         run: |
           make lint
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        if: github.ref_name == 'main'
+        env:
+          CC_TEST_REPORTER_ID: a6daa89558fd8b63b706c9225d01d51a13adfa8e3c462a2c23037cb5a2a62d43
+        with:
+          coverageCommand: make test-coverage
+          debug: true
