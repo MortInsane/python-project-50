@@ -1,4 +1,5 @@
-import json
+from gendiff.parser import get_method
+import os
 
 
 def true_false(value):
@@ -13,8 +14,14 @@ def true_false(value):
 
 
 def generate_diff(file1, file2):
-    file1 = json.load(open(file1))
-    file2 = json.load(open(file2))
+    _, ext1 = os.path.splitext(file1)
+    _, ext2 = os.path.splitext(file2)
+
+    method1 = get_method(ext1)
+    method2 = get_method(ext2)
+
+    file1 = method1(open(file1))
+    file2 = method2(open(file2))
 
     all_keys = list(set(file1).union(set(file2)))
     all_keys.sort()
