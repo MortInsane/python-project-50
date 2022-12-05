@@ -14,5 +14,19 @@ def json_path2():
     return "./tests/fixtures/file2.json"
 
 
-def test_generate_diff(json_path1, json_path2):
+@pytest.fixture
+def yaml_path1():
+    return "./tests/fixtures/file1.yaml"
+
+
+@pytest.fixture
+def yaml_path2():
+    return "./tests/fixtures/file2.yml"
+
+
+def test_generate_diff_json(json_path1, json_path2):
     assert generate_diff(json_path1, json_path2) == result_plain
+
+
+def test_generate_diff_yaml(yaml_path1, yaml_path2):
+    assert generate_diff(yaml_path1, yaml_path2) == result_plain
