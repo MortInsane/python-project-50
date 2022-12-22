@@ -4,6 +4,7 @@ from gendiff import generate_diff
 
 result_plain = open('tests/fixtures/result_plain.txt').read()
 
+
 @pytest.fixture
 def json_path1():
     return "./tests/fixtures/file1.json"
