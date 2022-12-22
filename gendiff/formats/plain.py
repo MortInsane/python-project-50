@@ -7,7 +7,13 @@ DATA = {
 
 def stringify(data):
     if isinstance(data, dict):
-        return ['complex value']
+        return '[complex value]'
+    elif data == 'true':
+        return 'true'
+    elif data == 'false':
+        return 'false'
+    elif data == 'null':
+        return 'null'
     elif isinstance(data, str):
         return f'\'{data}\''
 
