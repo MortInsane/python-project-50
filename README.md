@@ -31,3 +31,4 @@ gendiff path1.json/yaml/yml path2.json/yaml/yml -f json
 ```
 
 ### Preview
+[![asciicast](https://asciinema.org/a/547313.svg)](https://asciinema.org/a/547313)
