@@ -1,3 +1,6 @@
+import json
+
+
 DATA = {
     'added': '+',
     'deleted': '-',
@@ -27,8 +30,10 @@ def stringify(data, depth):
                 stringify(value, depth + 1)
             ))
         res.append(f'{INDENT * (TAB * (depth - 1))}}}')
+    elif isinstance(data, str):
+        res.append(data)
     else:
-        res.append(str(data))
+        res.append(json.dumps(data))
     return '\n'.join(res)
 
 

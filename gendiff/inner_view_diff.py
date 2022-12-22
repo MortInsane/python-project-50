@@ -1,6 +1,3 @@
-from gendiff.tools import normalize_data
-
-
 def inner_view_diff(file1, file2):
     file1_keys = set(file1)
     file2_keys = set(file2)
@@ -12,22 +9,22 @@ def inner_view_diff(file1, file2):
     inner_view = {}
 
     for key in new_keys:
-        value = normalize_data(file2[key])
+        value = file2[key]
         inner_view[key] = {
             'state': 'added',
             'value': [value]
         }
 
     for key in removed_keys:
-        value = normalize_data(file1[key])
+        value = file1[key]
         inner_view[key] = {
             'state': 'deleted',
             'value': [value]
         }
 
     for key in both_keys:
-        value_1 = normalize_data(file1[key])
-        value_2 = normalize_data(file2[key])
+        value_1 = file1[key]
+        value_2 = file2[key]
         if isinstance(file1[key], dict) and isinstance(file2[key], dict):
             inner_view[key] = {
                 'state': 'nested',

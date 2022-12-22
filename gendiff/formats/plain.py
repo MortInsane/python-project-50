@@ -1,3 +1,6 @@
+import json
+
+
 DATA = {
     'added': 'Property \'{0}\' was added with value: {1}',
     'deleted': 'Property \'{0}\' was removed',
@@ -8,14 +11,10 @@ DATA = {
 def stringify(data):
     if isinstance(data, dict):
         return '[complex value]'
-    elif data == 'true':
-        return 'true'
-    elif data == 'false':
-        return 'false'
-    elif data == 'null':
-        return 'null'
     elif isinstance(data, str):
         return f'\'{data}\''
+    else:
+        return json.dumps(data)
 
 
 def formatter(data, key_name=None):
