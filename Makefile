@@ -1,13 +1,7 @@
 install:
 	poetry install
 
-lint:
-	poetry run flake8 gendiff
-
-test-coverage:
-	poetry run pytest --cov=gendiff --cov-report xml
-
-buil:
+build:
 	poetry build
 
 publish:
@@ -15,3 +9,9 @@ publish:
 
 package-install:
 	python3 -m pip install --user --force-reinstall dist/*.whl
+
+lint:
+	poetry run flake8 gendiff
+
+test-coverage:
+	poetry run pytest --cov=gendiff --cov-report xml
