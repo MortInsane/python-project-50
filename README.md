@@ -13,7 +13,7 @@ Support formats: **json**, **yaml**
 git clone git@github.com:MortInsane/python-project-50.git
 cd python-project-50
 
-make build
+make package-build
 make package-install
 ```
 

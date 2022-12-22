@@ -1,7 +1,7 @@
 install:
 	poetry install
 
-build:
+package-build:
 	poetry build
 
 publish:
